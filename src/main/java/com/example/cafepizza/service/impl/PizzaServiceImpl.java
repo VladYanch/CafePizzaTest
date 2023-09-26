@@ -7,19 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PizzaServiceImpl implements PizzaService {
-
-    private final PizzaRepository repository;
-
+    private final PizzaRepository pizzaRepository;
     @Autowired
-    public PizzaServiceImpl(PizzaRepository repository) {
-        this.repository = repository;
+    public PizzaServiceImpl(PizzaRepository pizzaRepository) {
+        this.pizzaRepository = pizzaRepository;
     }
-
     @Override
-    public List<Pizza> findAll() {
-        return repository.findAll();
+    public List<Pizza> findAll() {return pizzaRepository.findAll();}
+    @Override
+    public void deletePizza(Long id) { pizzaRepository.deleteById(id);}
+    @Override
+    public Optional<Pizza> findById(Long id) {
+        return pizzaRepository.findById(id);
     }
+    @Override
+    public void addOrUpdate(Pizza pizza) { pizzaRepository.save(pizza);}
 }

@@ -21,6 +21,6 @@ values ('admin','$2a$10$noBvg9RMquV2dx2fUtdd3OHUYPVuQlklMJrbkQWtvp9uYP26hkuzm','
        ('user','$2a$10$noBvg9RMquV2dx2fUtdd3OHUYPVuQlklMJrbkQWtvp9uYP26hkuzm','ROLE_USER');
 
 -- password
--- insert into users (username, password, role)
+-- insert into user (username, password, role)
 -- values ('admin','$2a$10$7v0H6Wv9wHRIUVxxmCRdd.L2wZiXNsr5Us1HbgFtc567Hc2DNs1Ye','ROLE_ADMIN'),
 --        ('user','$2a$10$7v0H6Wv9wHRIUVxxmCRdd.L2wZiXNsr5Us1HbgFtc567Hc2DNs1Ye','ROLE_USER');
