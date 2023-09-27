@@ -10,4 +10,12 @@ public class SecurityController {
     public String getLoginPage(){
         return "login";
     }
+
+    @GetMapping("/logout")
+//    public String logout(HttpServletRequest request, HttpServletResponse response) {
+    public String logout() {
+
+        return "redirect:/login?logout=true";
+//        return "redirect:/login?logout=true";
+    }
 }
