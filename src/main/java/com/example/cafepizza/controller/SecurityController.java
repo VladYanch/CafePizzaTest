@@ -11,11 +11,11 @@ public class SecurityController {
         return "login";
     }
 
-    @GetMapping("/logout")
-//    public String logout(HttpServletRequest request, HttpServletResponse response) {
-    public String logout() {
+//    @GetMapping("/logout")
+////    public String logout(HttpServletRequest request, HttpServletResponse response) {
+//    public String getLogout() {
 
-        return "redirect:/login?logout=true";
+//        return "login";
 //        return "redirect:/login?logout=true";
-    }
+//    }
 }

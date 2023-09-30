@@ -34,6 +34,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .logout((logout) -> logout.permitAll()
+                .logoutSuccessUrl("/"))
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/",
                                 "/style.css",
@@ -50,8 +52,8 @@ public class SecurityConfig {
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .permitAll()
-                )
-                .logout((logout) -> logout.permitAll());
+                );
+
         return http.build();
     }
 }

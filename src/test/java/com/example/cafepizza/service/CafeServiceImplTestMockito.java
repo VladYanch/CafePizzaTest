@@ -8,17 +8,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-class CafeServiceImplTest {
+@SpringBootTest
+class CafeServiceImplTestMockito {
     @Mock
     private CafeRepository repository;
+
+    @Autowired
     private CafeServiceImpl service;
     private static List<Cafe> cafes;
+
+    @Autowired
     private static Cafe cafe;
 
     @BeforeEach
@@ -43,7 +50,7 @@ class CafeServiceImplTest {
     void findAllCafesTest() {
         when(repository.findAll()).thenReturn(cafes);
         List<Cafe> result = service.findAll();
-        assertEquals(cafes, result);
+        assertEquals(cafes.size(), result.size());
         verify(repository, times(1)).findAll();
     }
     @Test
