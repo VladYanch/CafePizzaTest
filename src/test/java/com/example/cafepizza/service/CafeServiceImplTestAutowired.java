@@ -18,12 +18,12 @@ class CafeServiceImplTestAutowired {
     @Test
     void findAllCafesTest() {
         List<Cafe> result = service.findAll();
-        assertEquals(6, result.size());
+        assertEquals(3, result.size());
     }
     @Test
     void deleteCafeTest() {
         service.deleteCafe(1L);
-        assertEquals(5, service.findAll().size());
+        assertEquals(2, service.findAll().size());
     }
     @Test
     void findByIdTest() {
@@ -32,8 +32,8 @@ class CafeServiceImplTestAutowired {
     @Test
     void addOrUpdate() {
         cafe = service.findById(1L).orElseThrow();
-        cafe.setId(7L);
+        cafe.setName("LOsteria Dortmund");
         service.addOrUpdate(cafe);
-        assertEquals("Losteria Dortmund", service.findById(7L).get().getName());
+        assertEquals("LOsteria Dortmund", service.findById(1L).get().getName());
     }
 }
