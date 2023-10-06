@@ -52,27 +52,24 @@
         <input class="input_pizza" th:field="*{close}" id="close"/><br/>
         <div class="error" th:if="${#fields.hasErrors('close')}" th:errors="*{close}"></div>
 
-<div class="cafe_btn">
-        <td>
-        <br/>
-                <div>
-                        <form  th:action="@{/cafes/new}" th:method="GET">
-                                <button type="submit" style="padding: 5pt; font-size: 12pt;
-                                        border-radius: 10pt; width: 60pt">Submit</button>
+        <div class="cafe_btn">
+                <td>
+                <br/>
+                        <div>
+                                <form  th:action="@{/cafes/new}" th:method="GET">
+                                        <button type="submit" style="padding: 5pt; font-size: 12pt;
+                                                border-radius: 10pt; width: 60pt">Submit</button>
+                                </form>
+                        </div>
+                </td>
+                <td>
+                        <form th:action="@{/cafes}" th:method="GET">
+                                <button type="submit" style="margin-left: 20pt; padding: 5pt;
+                     width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
                         </form>
-                </div>
-        </td>
-        <td>
-                <form th:action="@{/cafes}" th:method="GET">
-                        <button type="submit" style="margin-left: 20pt; padding: 5pt;
-             width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
-                </form>
-        </td>
-</div>
+                </td>
+        </div>
 </form>
-<!--<br/>-->
-<!--<a href="/cafes">Back</a>-->
-<!--</body>-->
 </section>
 </main>
 <footer class="footer">
